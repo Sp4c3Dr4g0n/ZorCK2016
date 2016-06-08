@@ -8,9 +8,9 @@ public class Test10 extends Area {
         this.portals()
             .north(new Portal(false, Test08.class));
         this.title("Test Area 10")
-            .description("This is the tenth test area. You are in a "
+            .initialDescription("This is the tenth test area. You are in a "
                 + "cave! There is exit to the north")
-            .shortDescription("This is the tenth test area")
+            .description("This is the tenth test area")
             .state("First", true)
             .dark(true);
     }

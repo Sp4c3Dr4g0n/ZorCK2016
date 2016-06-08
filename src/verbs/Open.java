@@ -15,14 +15,11 @@ public class Open extends Verb {
 
         switch (usage.open()) {
             case CLOSED:
-                switch (usage.lock()) {
-                    case LOCKED:
-                        System.out.println(noun.name() + " is locked");
-                        break;
-                    default:
-                        usage.open(Item.OPEN);
-                        System.out.println("You opened the " + noun.name());
-                        break;
+                if (usage.lock() != Item.LOCKED) {
+                    usage.open(Item.OPEN);
+                    System.out.println("You opened the " + noun.name());
+                } else {
+                    System.out.println(noun.name() + " is locked");
                 }
                 break;
             case OPEN:

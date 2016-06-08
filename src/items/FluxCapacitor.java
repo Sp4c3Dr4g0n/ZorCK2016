@@ -8,7 +8,12 @@ public class FluxCapacitor extends Item {
         super();
         this.usage().take(Item.TAKABLE);
         this.name("Flux Capacitor").synonym("flux capacitor")
-                .examine("This is one of the parts of the time machine!");
+                .description("This is one of the parts of the time machine!");
+
+    }
+
+    @Override
+    public void interact(final Command command, final Context context) {
 
     }
 }

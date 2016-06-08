@@ -1,19 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package items;
 
 import core.*;
 
-public class Scissors extends Item {
-
+/**
+ *
+ * @author Kevin White
+ */
+public class Scissors extends Item{
+    
     public Scissors() {
         super();
-        this.usage().take(Item.TAKABLE).read(Item.READABLE);
-        this.name("The Scissors")
-                .examine(
-                        "A pair of extraordinarily sharp scissors. Just looking at them sends a chill down your spine.")
-                .synonym("the scissors", "scissors", "scisors", "scissor")
-                .read("You don't want to get your eyes that close to see if anything's there.")
-                .sound("You move them and it sounds like the very molecules of the air are being split.")
-                .smell("They smell of blood and cold steel.");
-
+        this.usage().take(Item.TAKABLE);
+        this.name("Scissors").description("A pair of plastic scissors used to cut frail things")
+                .synonym("scissors", "scisors", "scissor")
+                .smell("plasticy");
+        
     }
+    
+    @Override
+    public void interact(final Command command, final Context context){
+    /*        if(command.getVerb().getTitle().equals("run")
+                    &&  context.getPlayer().hasMatching(command.getNoun())){
+                final Player player = context.getPlayer();
+                System.out.println("Running with scissors is a bad idea");
+            }
+            else {
+                command.getVerb().run(command, context);
+            }
+                 
+   */ }
 }

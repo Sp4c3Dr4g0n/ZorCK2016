@@ -10,9 +10,9 @@ public class AdamsonsRoom extends Area {
 
         this.portals().north(new Portal(false, Hallway10.class))
                 .west(new Portal(true,BroadcastingRoom.class));
-        this.title("Adamson's Room").description("----------").shortDescription("-----")
+        this.title("Adamson's Room").initialDescription("----------").description("-----")
                 .item(new Door(false, "Northern Door", null, this.portals().north()))
-                .item(new Door(true, "Western Door", KeyAdamsons.class, this.portals().west()));
+                .item(new Door(true, "Western Door", "Adamson's Key", this.portals().west()));
     }
 }
 

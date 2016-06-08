@@ -5,7 +5,7 @@ import core.*;
 public class TurnOn extends Verb {
 
     public TurnOn() {
-        super("turn on", Verb.usage().noun(), "activate", "light", "ignite", "illuminate");
+        super("turn on", Verb.usage().noun(), "activate");
     }
 
     @Override

@@ -8,7 +8,12 @@ public class MrFusion extends Item {
         super();
         //not drinkable because you need it for the time machine
         this.name("Mr.Fusion")
-            .examine("This is one of the parts of the time machine!")
+            .description("This is one of the parts of the time machine!")
             .synonym("mr fusion", "mr. fusion");
+    }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

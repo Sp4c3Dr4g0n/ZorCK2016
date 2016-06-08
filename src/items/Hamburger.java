@@ -8,9 +8,14 @@ public class Hamburger extends Item{
         super();
         this.usage().take(Item.TAKABLE).food(Item.EDIBLE);
         this.name("Hamburger")
-            .examine("Its meat looks succulent and buns look fluffy")
+            .description("Its meat looks succulent and buns look fluffy")
             .synonym("hamburger", "burger", "cheeseburger")
             .taste("It is the best burger you've ever tasted")
             .smell("It smells decadent");
+    }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

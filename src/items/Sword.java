@@ -10,4 +10,9 @@ public class Sword extends Item{
         this.name("Elvish Sword")
             .synonym("elvish sword", "sword");
     }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
+    }
 }

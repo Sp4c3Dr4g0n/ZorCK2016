@@ -7,8 +7,13 @@ public class BananaPeel extends Item{
         super();
         this.usage().take(Item.TAKABLE).move(Item.MOVABLE).wear(Item.WEARABLE);
         this.name("Banana Peel")
-            .examine("This is one of the parts of the time"
+            .description("This is one of the parts of the time"
                 + " machine!")
             .synonym("banana peel");
+    }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

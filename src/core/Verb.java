@@ -65,7 +65,6 @@ public abstract class Verb {
         private boolean bare = false;
         private boolean noun = false;
         private boolean direction = false;
-        private boolean arbitrary = false;
 
         public Usage() {}
 
@@ -108,20 +107,6 @@ public abstract class Verb {
 
         public Usage notDirection() {
             this.direction = false;
-            return this;
-        }
-
-        public boolean isArbitrary() {
-            return this.arbitrary;
-        }
-
-        public Usage arbitrary() {
-            this.arbitrary = true;
-            return this;
-        }
-
-        public Usage notArbirary() {
-            this.arbitrary = false;
             return this;
         }
     }

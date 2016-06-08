@@ -8,9 +8,14 @@ public class Ketchup extends Item{
         super();
         this.usage().take(Item.TAKABLE).food(Item.EDIBLE);
         this.name("Ketchup")
-            .examine("It's a glass bottle of Heins")
+            .description("It's a glass bottle of Heins")
             .synonym("mustard", "relish", "red sauce")
             .taste("It's salty but why did you eat plain ketchup?")
             .smell("I bet it would smell great on a burger");
+    }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

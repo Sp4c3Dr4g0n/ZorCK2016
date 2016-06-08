@@ -11,7 +11,12 @@ public class Cracker extends Item {
 
         this.name("Cracker")
             .synonym("cracker")
-            .examine("It's a stale cracker.")
+            .description("It's a stale cracker.")
             .taste("It tastes slightly salty, with a hint of carpet.");
+    }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

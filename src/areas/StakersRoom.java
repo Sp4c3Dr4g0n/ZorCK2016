@@ -9,7 +9,7 @@ public class StakersRoom extends Area {
         super(containingWorld);
 
         this.portals().west(new Portal(false, Hallway04.class));
-        this.title("Staker's Room").description("----------").shortDescription("-----")
+        this.title("Staker's Room").initialDescription("----------").description("-----")
                 .item(new Door(false, "Western Door", null, this.portals().west()));
     }
 }

@@ -9,7 +9,7 @@ public class JorstadsRoom extends Area {
         super(containingWorld);
 
         this.portals().west(new Portal(false, Hallway02.class));
-        this.title("Jorstad's Room").description("----------").shortDescription("-----")
+        this.title("Jorstad's Room").initialDescription("----------").description("-----")
                 .item(new Door(false, "Western Door", null, this.portals().west()));
     }
 }

@@ -3,10 +3,10 @@ package verbs;
 import core.*;
 import core.World.Direction;
 
-public class Move extends Verb {
+public class Run extends Verb {
 
-    public Move() {
-        super("move", Verb.usage().direction(), "go", "travel", "walk");
+    public Run() {
+        super("run", Verb.usage().direction(), "sprint", "jog", "hustle");
     }
 
     @Override

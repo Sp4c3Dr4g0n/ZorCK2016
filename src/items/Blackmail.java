@@ -2,13 +2,21 @@ package items;
 
 import core.*;
 
-public class Blackmail extends Item {
+/**
+ *
+ * @author dayley3391b
+ */
+public class BlackMail extends Item {
 
-    public Blackmail() {
+    public BlackMail() {
         super();
         this.usage().take(Item.TAKABLE);
-        this.name("Blackmail")
-                .examine("It's a note from an unknown author...")
+        this.name("BlackMail")
+                .description("It's a note from an unknown author...")
                 .synonym("mail");
+    }
+    @Override
+    public void interact(final Command command, final Context context){
+
     }
 }

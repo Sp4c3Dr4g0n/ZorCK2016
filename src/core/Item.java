@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import core.World.Direction;
-//
+
 public abstract class Item {
-    private String name = "Default item name";
-    private String examine;
-    private String look;
+    private String name;
+    private String description;
 
     private final Usage usage = new Usage();
     // TODO Update description
@@ -103,11 +102,11 @@ public abstract class Item {
     private String taste;
     private Item inside;
     // if item is read
-    private String read;
+    private String text;
     private String smell;
     private String sound;
     private final List<Item> received = new ArrayList<>();
-    private final List<Class<? extends Item>> keys = new ArrayList<>();
+    private final List<String> keys = new ArrayList<>();
     private Portal portal;
     private final List<String> synonyms = new ArrayList<>();
 
@@ -126,21 +125,12 @@ public abstract class Item {
         return this;
     }
 
-    public String examine() {
-        return this.examine;
+    public String description() {
+        return this.description;
     }
 
-    public Item examine(final String description) {
-        this.examine = description;
-        return this;
-    }
-
-    public String look() {
-        return this.look;
-    }
-
-    public Item look(final String look) {
-        this.look = look;
+    public Item description(final String description) {
+        this.description = description;
         return this;
     }
 
@@ -162,12 +152,12 @@ public abstract class Item {
         return this;
     }
 
-    public String read() {
-        return this.read;
+    public String text() {
+        return this.text;
     }
 
-    public Item read(final String read) {
-        this.read = read;
+    public Item text(final String text) {
+        this.text = text;
         return this;
     }
 
@@ -202,16 +192,16 @@ public abstract class Item {
         return this;
     }
 
-    public List<Class<? extends Item>> keys() {
+    public List<String> keys() {
         return this.keys;
     }
 
-    public Item key(final Class<? extends Item> key) {
+    public Item key(final String key) {
         this.keys.add(key);
         return this;
     }
 
-    public Portal portal() {
+    public Portal getPortal() {
         return this.portal;
     }
 
@@ -253,7 +243,7 @@ public abstract class Item {
 
     public void synchronizeDoor(final World world, final Area currentArea) {
         Portal portal;
-        portal = this.portal();
+        portal = this.getPortal();
         Area target;
         target = world.getArea(portal.getTarget());
         final Direction direction = currentArea.direction(portal);
@@ -309,9 +299,7 @@ public abstract class Item {
         }
     }
 
-    public boolean interact(final Command command, final Context context) {
-        return false;
-    };
+    public abstract void interact(Command command, Context context);
 
     public static final class Usage {
         private Visible visible = Visible.VISIBLE;
@@ -334,7 +322,7 @@ public abstract class Item {
         private Puttable puttable = Puttable.PUTTABLE;
 
         public Usage() {}
-
+                
         public static enum Visible {
             VISIBLE, HIDDEN
         }
@@ -391,7 +379,7 @@ public abstract class Item {
         public Visible visible() {
             return this.visible;
         }
-
+        
         public static enum Puttable{
             PUTTABLE,UNPUTTABLE
         }
@@ -544,11 +532,11 @@ public abstract class Item {
             this.use = o;
             return this;
         }
-
+        
         public Puttable puttable(){
             return this.puttable;
         }
-
+        
         public Usage puttable(final Puttable o){
             this.puttable = o;
             return this;

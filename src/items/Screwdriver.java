@@ -10,4 +10,9 @@ public class Screwdriver extends Item{
         this.name("Flathead Screwdriver")
             .synonym("flathead screwdriver", "screwdriver");
     }
+
+    @Override
+    public void interact(final Command command, final Context context){
+
+    }
 }

@@ -9,11 +9,11 @@ public class FishersRoom extends Area {
     public FishersRoom(final World containingWorld) {
         super(containingWorld);
         this.portals().south(new Portal(Portal.State.UNLOCKED, Hallway17.class));
-        this.description("You are in Fisher's room as various papers on "
+        this.initialDescription("You are in Fisher's room as various papers on "
                 + "the downfall of the Ming Empire and essays as well as Silk "
                 + "Roads trading changed China while a Reggae-sounding song "
                 + "blares through the speakers. There is a lantern on the floor.")
-            .shortDescription("This is Fisher's room, it smells vaguely of perspiration "
+            .description("This is Fisher's room, it smells vaguely of perspiration "
                 + "and the Spanish Inquisition.")
             .dark(false).smell("It smells like teen spirit (or in other words perspiration)")
             .taste("You taste good ol' oxygen")
@@ -36,7 +36,7 @@ public class FishersRoom extends Area {
                         + " United States' environmental impacts."
                         + " Nothing seems to be of interest in this room.");
             } else {
-                System.out.println(this.shortDescription());
+                System.out.println(this.description());
             }
         } else {
             final Item noun = command.getNoun();
